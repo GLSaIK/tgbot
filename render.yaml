@@ -1,1 +1,8 @@
 
+services:
+ - type: web
+ name: telegram-summer-bot
+ env: python
+ plan: free
+ buildCommand: ""
+ startCommand: puthon tgbot.py
