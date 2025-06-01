@@ -37,7 +37,7 @@ async def startcom(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Основная функция запуска бота
 async def main():
     # Замени 'YOUR_TOKEN_HERE' на токен, выданный BotFather
-    app = ApplicationBuilder().token(os.getenv(BOT_TOKEN).build()
+    app = ApplicationBuilder().token(os.getenv(BOT_TOKEN)).build()
 
     # Добавляем команду
     app.add_handler(CommandHandler("start", startcom))
