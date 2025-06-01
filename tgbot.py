@@ -1,4 +1,5 @@
 import nest_asyncio
+import os
 nest_asyncio.apply()
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
@@ -36,7 +37,7 @@ async def startcom(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Основная функция запуска бота
 async def main():
     # Замени 'YOUR_TOKEN_HERE' на токен, выданный BotFather
-    app = ApplicationBuilder().token("7900235290:AAESSXMl2oaGZt1KpsodehxFAlb9ktdonaw").build()
+    app = ApplicationBuilder().token(os.getenv("BOT_TOKEN).build()
 
     # Добавляем команду
     app.add_handler(CommandHandler("start", startcom))
