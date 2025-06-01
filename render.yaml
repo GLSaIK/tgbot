@@ -1,6 +1,6 @@
 
 services:
- - type: web
+ type: web
  name: telegram-summer-bot
  env: python
  plan: free
