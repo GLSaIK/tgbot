@@ -34,20 +34,21 @@ async def startcom(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(f"вот ты старт жмешь, а прошло уже {seconds} секунд или {min} минут лета")
 
 # Основная функция запуска бота
-async def main():
-    # Замени 'YOUR_TOKEN_HERE' на токен, выданный BotFather
+# ... ваш код с функциями остается прежним ...
+
+def main(): # Убираем async здесь, так как run_polling сам создаст цикл
+    # Вставьте ваш токен
     app = ApplicationBuilder().token("7900235290:AAESSXMl2oaGZt1KpsodehxFAlb9ktdonaw").build()
 
-    # Добавляем команду
     app.add_handler(CommandHandler("start", startcom))
     app.add_handler(CommandHandler("time", seconds_command))
 
     print("Бот запущен!")
-    await app.run_polling()
+    # run_polling() — это высокоуровневый метод, который сам запускает и останавливает цикл
+    app.run_polling()
 
-# Запуск бота
 if __name__ == "__main__":
-    import asyncio
-    asyncio.run(main())
+    main()
+
 
 
